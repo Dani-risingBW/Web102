@@ -1,0 +1,46 @@
+.scholarship-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.scholarship-box {
+  background: #1e47ae;
+  border: 2px solid #1976d2;
+  border-radius: 12px;
+  box-shadow: 0 12px 18px rgba(0,0,0,0.08);
+  padding: 24px;
+  width: 300px;
+  box-sizing: border-box;
+  margin-bottom: 24px;
+  transition: box-shadow 0.2s;
+}
+
+.scholarship-box:hover {
+  box-shadow: 20px 10px 20px rgba(25, 118, 210, 0.332);
+}
+
+.scholarship-link-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #19d2c3a2;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+.scholarship-link-btn:hover {
+  background: #125ea2;
+}
+
+h1{
+  font-size: 5rem;
+  color: #20a11e;
+  margin-bottom: 16px;
+  
+}
