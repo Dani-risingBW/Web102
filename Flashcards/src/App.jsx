@@ -13,7 +13,9 @@ function App() {
     { question: "What does JSX stand for?", answer: " JSX stands for JavaScript XML. It lets you write HTML-like code inside JavaScript." },
     { question: "How do you display dynamic data in JSX?", answer: "Use curly braces {} to insert variables: <p>{name}</p>" },
     { question: "How do you handle a button click in React?", answer: "Use the onClick prop: <button onClick={handleClick}>Click Me</button>" },
-    { question: "Can you use if statements inside JSX?", answer: "No, but you can use ternary (? :) or logical (&&) expressions instead." }
+    { question: "Can you use if statements inside JSX?", answer: "No, but you can use ternary (? :) or logical (&&) expressions instead." },
+    { question: "What component renders input for a user?", answer: "<input />" },
+    { question: "What components do you use to select box options?", answer: "<select><option>Option 1</option><option>Option 2</option></select>" },
   ];
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showFront, setShowFront] = useState(true);
