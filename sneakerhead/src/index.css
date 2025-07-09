@@ -1,13 +1,20 @@
 .sneaker{
-  border: 1px solid black;
+  border: 1px solid rgb(97, 94, 94);
   padding: 20px;
-  max-width: 400px;
-
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 15px 30px rgba(233, 153, 240, 0.2);
+  perspective: 1000px;
 }
+
+
 
 .sneaker img{
   width: 100%;
   padding: 10px 0;
+  
+  
 }
 
 .tags{
@@ -27,11 +34,6 @@
   background-color: #b6c3f7;
 }
 
-body {
-  background-color: #222;
-  color: white;
-  display: flex;
-}
 
 .shuffle-btn{
   background-color: #a0a3e7;
@@ -42,5 +44,20 @@ body {
   cursor: pointer;
   font-size: 1em;
   transition: background-color 0.3s;
-  margin-top: 20px;
+  margin: 20px;
+  margin-bottom: 50px;
+}
+
+.banned-tags{
+  margin: 20px;
+  padding: 8px;
+  border-radius: 100px;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.banned-tags-section{
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centers horizontally */
 }

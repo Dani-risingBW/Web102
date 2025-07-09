@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import Sneaker from '../components/Sneaker';
+import BannedList from '../components/BannedList';
 
 
 function App() {
   const [sneakers, setSneakers] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [bannedTags, setBannedTags] = useState([]);
   
   const queries = ["jordan", "yeezy", "nike", "adidas", "puma", "reebok"];
   const [queryIndex, setQueryIndex] = useState(0);
@@ -22,7 +24,23 @@ function App() {
       .catch(err => console.error('Error fetching sneakers:', err));  
     
   }, [queryIndex]);
+
+  // Filter out sneakers with banned tags
+  const filteredSneakers = sneakers.filter(
+    sneaker =>
+      !bannedTags.includes(sneaker.brand) &&
+      !bannedTags.includes(sneaker.colorway) &&
+      !bannedTags.includes(sneaker.retailPrice)
+      
+  );
   
+  //Ban a tag 
+  const handleBanTag = (tag) => {
+    setBannedTags(prev => [...new Set([...prev, tag])]);
+  };
+  const handleRemoveTag = (tagToRemove) => {
+    setBannedTags(prev => prev.filter(tag => tag !== tagToRemove));
+  };
   
 
   // Shuffle to a random sneaker
@@ -41,12 +59,24 @@ function App() {
   };
 
   return (
-    <>
-      <h1>Sneakerz</h1>
-      {sneakers.length > 0 && <Sneaker sneaker={sneakers[currentIndex]} />}
-      <button className="shuffle-btn"onClick={handleShuffle}>Shuffle Sneaker</button>
+    <div className="App">
+      <div className="section">
+        <h1>Sneakerz</h1>
+        <button className="shuffle-btn"onClick={handleShuffle}>Shuffle Sneaker</button>
+        {filteredSneakers.length > 0 && (<Sneaker 
+          sneaker={filteredSneakers[currentIndex]} 
+          onBanTag={handleBanTag}
+        />)}
+        
+      </div>
+      <div className="section" id="banned-list">
+        <BannedList 
+          bannedTags={bannedTags}  
+          onRemoveTag={handleRemoveTag} 
+        />
+      </div>
     
-    </>
+    </div>
   );
 };
 
