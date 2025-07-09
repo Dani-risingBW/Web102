@@ -1,0 +1,46 @@
+.sneaker{
+  border: 1px solid black;
+  padding: 20px;
+  max-width: 400px;
+
+}
+
+.sneaker img{
+  width: 100%;
+  padding: 10px 0;
+}
+
+.tags{
+  display: inline-block;
+  padding: 4px 10px;
+  margin: 4px 4px 0 0;
+  font-size: 0.85em;
+  background-color: #e0e7ff;
+  color: #222;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.tags:hover {
+  background-color: #b6c3f7;
+}
+
+body {
+  background-color: #222;
+  color: white;
+  display: flex;
+}
+
+.shuffle-btn{
+  background-color: #a0a3e7;
+  color: rgb(48, 31, 31);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s;
+  margin-top: 20px;
+}
