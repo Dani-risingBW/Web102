@@ -2,21 +2,19 @@
 html, body {
   margin: 0;
   padding: 0;
-  height: 100%;
 }
 
 .App {
   display: flex;
-  flex-direction: column;
-  min-height: 100vh; /* Full viewport height */
+  flex-direction: row;
+  max-height: 100vh; /* Ensure footer is at the bottom */
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  
 }
 
 .Navigation {
-  flex:1;
+  flex: 1;
   text-align: center;
   margin-bottom: 20px;
 }
@@ -105,7 +103,7 @@ html, body {
   font-weight: bold;
 }
 
-.Footer {
+.footer {
   text-align: center;
   padding: 10px;
   border-top: 1px solid #ddd;

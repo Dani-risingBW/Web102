@@ -152,8 +152,7 @@ function App() {
           <a href="#forecast">Forecast</a>
           <a href="#historical">Historical</a>
         </div>
-      </div>
-      <div className="Content">
+      
         <section className="section" id="weather">
           <h2>Current Weather</h2>
           {loading ? (
@@ -187,10 +186,9 @@ function App() {
       <div className="weather-card-section">
         <h2>Weather Cards</h2>
         <WeatherCard defaultDisplayList={displayList} />
+        <p className="footer">Data provided by Weatherbit. © 2025 Weatherbit</p>
       </div>
-      <footer className="Footer">
-        <p>Data provided by Weatherbit. © 2025 Weatherbit</p>
-      </footer>
+      
     </div>
   );
 }
