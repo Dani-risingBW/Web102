@@ -1,55 +1,115 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+/* Ensure the root container takes at least full viewport height */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 .App {
-  color: #fff;
   display: flex;
   flex-direction: column;
-  font-family: Avenir, Century Gothic, sans-serif;
-  font-size: calc(10px + 2vmin);
-  font-style: normal;
-  font-weight: 100;
-  justify-content: center;
-  margin-bottom: 60px;
-  margin-top: 40px;
+  min-height: 100vh; /* Full viewport height */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  
 }
+
+.Navigation {
+  flex:1;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.nav-links a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+.Content {
+  flex: 1; /* Grow to fill available space, pushing footer below all content */
+  margin-bottom: 20px;
+}
+
+.section {
+  margin: 20px 0;
+}
+
+.section ul {
+  list-style: none; /* Remove default bullets */
+  padding: 0; /* No padding needed */
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Space between weather items */
+}
+
+.section li {
+  display: flex;
+  align-items: center; /* Align icon and text vertically */
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.weather-item {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Reduced gap to suit smaller icons */
+}
+
+.section img {
+  width: 16px; /* Smaller icon size for desktop */
+  height: 16px;
+  object-fit: contain;
+}
+
+.section span {
+  font-size: 16px; /* Adjust font size for readability */
+  white-space: nowrap; /* Prevent text wrapping */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Handle long descriptions */
+}
+
+.section input,
+.section select {
+  width: 100%;
+  max-width: 200px;
+  padding: 8px;
+  margin: 0 10px 20px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.summary-stats {
+  margin-bottom: 20px;
+}
+
+.summary-stats p {
+  margin: 5px 0;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+}
+
+.Footer {
+  text-align: center;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  width: 100%;
+  box-sizing: border-box;
+}
+
