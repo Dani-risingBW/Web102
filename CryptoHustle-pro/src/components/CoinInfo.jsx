@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 const API_KEY = import.meta.env.VITE_APP_API_KEY
 
 function CoinInfo({image, name, symbol}) {
@@ -20,15 +21,19 @@ function CoinInfo({image, name, symbol}) {
     return (
 
         <li className="main-list" key={symbol}>
-            <img
-                className="icons"
-                src={`https://www.cryptocompare.com${image}`}
-                alt={`Small icon for ${name} crypto coin`}
-            />
-            <span className="coin-name">{name}</span> 
-            <span className="tab">
-            {price && price.USD ? ` $${price.USD} USD` : null}
-            </span>
+            <Link to={`/coinDetails/${symbol}`} 
+                style={{ color: "white" }}
+                key={symbol}>    
+                <img
+                    className="icons"
+                    src={`https://www.cryptocompare.com${image}`}
+                    alt={`Small icon for ${name} crypto coin`}
+                />
+                <span className="coin-name">{name}</span> 
+                <span className="tab">
+                {price && price.USD ? ` $${price.USD} USD` : null}
+                </span>
+            </Link>
         </li>
     )
 }
