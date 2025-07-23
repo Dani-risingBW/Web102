@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+const API_KEY = import.meta.env.VITE_WEATHERBIT_API_KEY;
 
 function WeatherCard({  defaultDisplayList = [] }) {
   const [searchTerm, setSearchTerm] = useState('');
@@ -45,25 +47,28 @@ function WeatherCard({  defaultDisplayList = [] }) {
       </div>
       <h3>Current Weather ☀️🌧️</h3>
       {weatherToShow.length > 0 ? (
-        <ul>
+        <ul className="weather-card-list">
           {weatherToShow.map((weather) => (
             <li key={`${weather.city_name}-${weather.state_code || weather.country_code}`}>
-              <div className="weather-item">
-                <img
-                  src={getWeatherIconUrl(weather.weather?.icon)}
-                  alt={weather.weather?.description || 'Weather icon'}
-                  onError={(e) => (e.target.src = 'https://via.placeholder.com/10')} // Updated to 10px
-                />
-                <span>
-                  {weather.city_name}: {weather.temp}°C, {weather.weather?.description || 'No description'}
-                </span>
-              </div>
+              <Link to={`/weatherDetails/${weather.city_name}`}>
+                <div className="weather-item">
+                  <img
+                    src={getWeatherIconUrl(weather.weather?.icon)}
+                    alt={weather.weather?.description || 'Weather icon'}
+                    onError={(e) => (e.target.src = 'https://via.placeholder.com/10')}
+                  />
+                  <span>
+                    {weather.city_name}: {weather.temp}°C, {weather.weather?.description || 'No description'}
+                  </span>
+                </div>
+              </Link>
             </li>
           ))}
         </ul>
       ) : (
         <p>No weather data found. Try another city or filter!</p>
       )}
+    
     </div>
   );
 }
