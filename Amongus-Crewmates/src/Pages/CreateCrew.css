@@ -1,0 +1,63 @@
+.create-crew-form {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 32px 24px;
+  background: linear-gradient(135deg, #fa2e2e 0%, #1a1a1b 100%);
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.13);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  
+}
+
+.create-crew-form label {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+
+.create-crew-form input[type="text"],
+.create-crew-form input[type="float"],
+.create-crew-form select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #bdbdbd;
+  font-size: 1rem;
+  background: #fff;
+  margin-bottom: 12px;
+  transition: border-color 0.2s;
+  color: black;
+}
+
+.create-crew-form input[type="text"]:focus,
+.create-crew-form input[type="float"]:focus,
+.create-crew-form select:focus {
+  border-color: #a6c1ee;
+  outline: none;
+}
+
+.create-crew-form input[type="submit"] {
+  background: linear-gradient(90deg, #1a1a1b 0%, #fa2e2e 100%);
+  color: #333;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 0;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: background 0.2s;
+}
+
+.create-crew-form input[type="submit"]:hover {
+  background: linear-gradient(90deg, #fc2c48 0%, #a6c1ee 100%);
+}
+
+@media (max-width: 600px) {
+  .create-crew-form {
+    max-width: 98vw;
+    padding: 16px 4vw;
+  }
+}
