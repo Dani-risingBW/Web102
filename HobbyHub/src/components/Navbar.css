@@ -23,7 +23,7 @@
   padding: 0;
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 15%;
 }
 
 .navbar nav ul li {
@@ -48,7 +48,7 @@
   padding: 8px 12px;
   border: 1px solid #ddd;
   border-radius: 10px;
-  width: 200px;
+  width: 40%;
 }
 
 /* Language toggle button */
@@ -81,4 +81,13 @@
   flex: 1; /* Takes up remaining space */
   padding: 40px 20px;
   min-height: calc(100vh - 200px); /* Adjust based on header height */
+}
+
+/* Add to your CSS file */
+.post-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 10px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
