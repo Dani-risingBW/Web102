@@ -1,34 +1,49 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState, useEffect } from 'react'
 import './App.css'
+import Navbar from './components/Navbar'
+import { supabase } from './client'
+import { Link } from 'react-router-dom'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [posts, setPosts] = useState([])
+  
+  const fetchPosts = async () => {
+    const { data, error } = await supabase
+      .from('Hobby-forum')
+      .select('*')
+      .order('created_at', { ascending: false })
+
+    if (error) {
+      console.error('Error fetching posts:', error)
+    } else {
+      console.log('Posts fetched successfully:', data)
+      setPosts(data)
+    }
+  }
+
+  // Add useEffect to call fetchPosts when component mounts
+  useEffect(() => {
+    fetchPosts()
+  }, [])
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="App">
+      <Navbar />
+      <div className='header'>
+        <p>Welcome to the Gym Community</p>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+      <div className="browse">
+        <h2>Browse Hobbies</h2>
+        <div className="hobby-list">
+          {posts.map(post => (
+            <div key={post.id} className="hobby-item">
+              <Link to={`/forum/${post.category}`}><h3>{post.title}</h3></Link>
+              <p>{post.content}</p>
+            </div>
+          ))}
+        </div>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </div>
   )
 }
 

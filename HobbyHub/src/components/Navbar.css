@@ -1,0 +1,84 @@
+/* Navbar container */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #757272;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  z-index: 1000;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  color: #ffffff;
+  box-sizing: border-box; /* Add this line */
+}
+
+/* Navigation list */
+.navbar nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbar nav ul li {
+  margin: 0;
+}
+
+.navbar nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.navbar nav ul li a:hover {
+  background: #f0f0f0;
+}
+
+/* Search bar */
+.search-bar {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 200px;
+}
+
+/* Language toggle button */
+.language-toggle {
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.language-toggle:hover {
+  background: #0056b3;
+}
+
+
+
+/* In App.css */
+.App, .layout {
+  padding-top: 60px; /* Account for fixed navbar */
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.browse {
+  flex: 1; /* Takes up remaining space */
+  padding: 40px 20px;
+  min-height: calc(100vh - 200px); /* Adjust based on header height */
+}
