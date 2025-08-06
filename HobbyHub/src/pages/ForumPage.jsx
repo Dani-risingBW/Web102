@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import {React, useEffect} from 'react';
 import Layout from '../components/Layout';
 import PostList from '../components/PostList.jsx';
@@ -16,9 +16,6 @@ function ForumPage() {
   return (
     <Layout>
         <h1>{formattedTitle} Forum</h1>
-        
-        {/* Form to create a new post in this category*/}
-        <PostForm category={category} />
 
         {/* List of posts filtered by category */}
         <PostList category={category} />

@@ -83,11 +83,202 @@
   min-height: calc(100vh - 200px); /* Adjust based on header height */
 }
 
-/* Add to your CSS file */
+/* Comment-style formatting for posts */
+.post-item {
+  background: #f9f9f9;
+  border: 1px solid #e1e1e1;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 15px 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: box-shadow 0.2s ease;
+}
+
+.post-item:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.post-item h3 {
+  margin: 0 0 10px 0;
+  color: #333;
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.post-item p {
+  margin: 8px 0;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Profile/author section */
+.post-item .author-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.post-item .author-info::before {
+  content: "👤";
+  margin-right: 6px;
+}
+
+/* Timestamp styling */
+.post-item .timestamp {
+  font-size: 0.8rem;
+  color: #999;
+  margin-top: 10px;
+  font-style: italic;
+}
+
+/* Image styling within comments */
 .post-item img {
   max-width: 100%;
   height: auto;
   border-radius: 8px;
-  margin: 10px 0;
+  margin: 12px 0;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border: 1px solid #ddd;
+}
+
+/* Add some spacing between posts */
+.posts-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Modal.css */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #999;
+}
+
+.modal-close:hover {
+  color: #333;
+}
+
+/* Header with button */
+.header-with-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.create-post-btn {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.create-post-btn:hover {
+  background: #0056b3;
+}
+
+.timestamp {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+.edit-post, .delete-post {
+  cursor: pointer;
+  color: #007bff;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.edit-post:hover {
+  color: #0056b3;
+}
+
+.delete-post {
+  color: #dc3545;
+}
+
+.delete-post:hover {
+  color: #c82333;
+}
+
+.upvote-section {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.upvote-btn {
+  background: none;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  color: #666;
+  transition: all 0.2s ease;
+}
+
+.upvote-btn:hover {
+  background: #f0f0f0;
+  border-color: #007bff;
+  color: #007bff;
+  transform: translateY(-1px);
+}
+
+.upvote-btn:active {
+  transform: translateY(0);
+}
+
+.likes {
+  font-weight: 600;
+  color: #007bff;
+  min-width: 20px;
+  text-align: center;
+}
+
+.timestamp {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  font-size: 0.9rem;
+  margin-top: 10px;
 }
